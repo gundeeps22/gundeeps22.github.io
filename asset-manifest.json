@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e73f09e2.chunk.css",
+    "main.js": "/static/js/main.5ed053a5.chunk.js",
+    "main.js.map": "/static/js/main.5ed053a5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5b691f15.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5b691f15.js.map",
+    "static/js/2.ac6bfafd.chunk.js": "/static/js/2.ac6bfafd.chunk.js",
+    "static/js/2.ac6bfafd.chunk.js.map": "/static/js/2.ac6bfafd.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e73f09e2.chunk.css.map": "/static/css/main.e73f09e2.chunk.css.map",
+    "static/js/2.ac6bfafd.chunk.js.LICENSE.txt": "/static/js/2.ac6bfafd.chunk.js.LICENSE.txt",
+    "static/media/bloomberg.ddb0f616.webp": "/static/media/bloomberg.ddb0f616.webp",
+    "static/media/gradesaver.659f8533.webp": "/static/media/gradesaver.659f8533.webp",
+    "static/media/hubspot.597515b6.svg": "/static/media/hubspot.597515b6.svg",
+    "static/media/mastercard.0e93028c.jpg": "/static/media/mastercard.0e93028c.jpg",
+    "static/media/App.css": "/static/media/personal-website-background.c225accc.png",
+    "static/media/project-background.6c49b52e.png": "/static/media/project-background.6c49b52e.png",
+    "static/media/resume-gundeep-singh.68353978.pdf": "/static/media/resume-gundeep-singh.68353978.pdf",
+    "static/media/under_construction.c4d1cb30.png": "/static/media/under_construction.c4d1cb30.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5b691f15.js",
+    "static/js/2.ac6bfafd.chunk.js",
+    "static/css/main.e73f09e2.chunk.css",
+    "static/js/main.5ed053a5.chunk.js"
+  ]
+}

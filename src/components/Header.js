@@ -1,88 +1,88 @@
 import React from 'react';
 import styled from 'styled-components';
- 
+import { useTransition } from 'react-spring';
+import { Link } from '@reach/router';
+import resume from '../files/resume-gundeep-singh.pdf';
+
 const Nav = styled.div`
-  background-color: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.0975);
   width: 100%;
 `;
  
 const NavHeader = styled.div`
-  max-width: 1010px;
   padding: 26px 20px;
-  width: 100%;
-  display: flex;
+  margin: 0% 10%;
+  display: grid;
   align-items: center;
-  margin: 0 auto;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+      "title nav-links"
 `;
  
-const NavLeft = styled.div`
-  width: 33.333%;
-  text-align: left;
+const NavTitle = styled.h2`
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: white;
+`;
+
+const NavLinks = styled.div`
+  grid-area: nav-links;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  column-gap: 10%;
 `;
  
-const NavCenter = styled.div`
-  width: 33.333%;
-  text-align: center;
+const MenuLink = styled(Link)`
+  text-decoration: none;
+
+  color: ${props => (props.to === window.location.pathname) ? "#9961bb" : "white"};
+
+  &:hover {
+    color: #cab3e6;
+  }
 `;
- 
-const Input = styled.input`
-  font-size: 16px;
-  border: solid 1px #dbdbdb;
-  border-radius: 3px;
-  color: #262626;
-  padding: 7px 33px;
-  border-radius: 3px;
-  color: #999;
-  cursor: text;
-  font-size: 14px;
-  font-weight: 300;
-  text-align: center;
-  background: #fafafa;
- 
-  &:active,
-  &:focus {
-    text-align: left;
+
+const ExternalMenuLink = styled.a`
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: #cab3e6;
+  }
+
+  &:active {
+    color: #9961bb;
   }
 `;
  
-const NavRight = styled.div`
-  width: 33.333%;
-  text-align: right;
- 
-  svg {
-    margin-right: 20px;
-  }
-`;
- 
-const MenuLink = styled.a``;
- 
-function Header() {
-  return (
-    <Nav>
-      <NavHeader>
-        <NavLeft>Stylagram</NavLeft>
- 
-        <NavCenter>
-          <Input type="text" placeholder="Search" />
-        </NavCenter>
- 
-        <NavRight>
-          <MenuLink href="#">
-            Compass
-          </MenuLink>
- 
-          <MenuLink href="#">
-            Explore
-          </MenuLink>
- 
-          <MenuLink href="#">
-            Avatar
-          </MenuLink>
-        </NavRight>
-      </NavHeader>
-    </Nav>
-  );
+function Header(props) {
+
+  const transitions = useTransition(props.show, {
+    from: { opacity: 0, position: 'relative' },
+    enter: { opacity: 1, position: 'relative' },
+    leave: { opacity: 0, position: 'absolute' },
+    reverse: props.show
+  });
+
+  return transitions(
+    (styles, item) => item && (
+      <Nav style={styles}>
+        <NavHeader>
+          <NavTitle>Hi, I'm Gundeep!</NavTitle>
+          <NavLinks>
+            <MenuLink to="/projects">Projects</MenuLink>
+            <MenuLink to="/about">About Me</MenuLink>
+            <ExternalMenuLink href="https://medium.com/">Blog</ExternalMenuLink>
+            <MenuLink to="/instafeed">Insta</MenuLink>
+            <ExternalMenuLink href={resume}>Resume</ExternalMenuLink>
+            <MenuLink to="/about#contactinfo">Contact</MenuLink>
+          </NavLinks>
+        </NavHeader>
+      </Nav>
+    )
+  )
 }
  
 export default Header;
